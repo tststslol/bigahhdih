@@ -8,19 +8,14 @@
 </head>
 <body>
     <script>
-        // Use XPath to locate the element
-        const xpath = "/html/body/div[3]/div[1]/header/nav/ul[2]/li[6]/div/button/div/div[2]";
-        const result = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+        const element = document.querySelector(".LGaPf._17Z60.util-max-width-twenty-characters-2pOJU");
         
-        // Get the element
-        const element = result.singleNodeValue;
-        
-        // Check if it exists and change its text
         if (element) {
-          element.textContent = "New Text Goes Here";
+          element.textContent = "New Text Here";
         } else {
           console.log("Element not found.");
         }
+
 
     </script>
 </body>
